@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { Link, Outlet, useNavigate } from 'react-router-dom';
+import Form from 'react-bootstrap/Form';
 import { PokemonContext } from '../context/PokemonContext';
-//import logo from '../assets/Pokédex_logo.png'
 
 export const Navigation = () => {
 	const { onInputChange, valueSearch, onResetForm } =
@@ -28,7 +28,7 @@ export const Navigation = () => {
 					/>
 				</Link>
 
-				<form onSubmit={onSearchSubmit}>
+				<Form onSubmit={onSearchSubmit}>
 					<div className='form-group'>
 						<svg
 							xmlns='http://www.w3.org/2000/svg'
@@ -50,12 +50,12 @@ export const Navigation = () => {
 							id=''
 							value={valueSearch}
 							onChange={onInputChange}
-							placeholder='Buscar nombre de pokemon'
+							placeholder='Search pokemon'
 						/>
 					</div>
 
-					<button className='btn-search'>Buscar</button>
-				</form>
+					<button className='btn-search'>Search</button>
+				</Form>
 			</header>
 
 			<Outlet />
